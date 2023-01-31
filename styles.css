@@ -42,25 +42,37 @@
 .mat-card {
   border-radius: 32px;
   margin: 10px 10px;
-  padding: 20px;
+  padding: 32px;
   border-color: gray;
 }  
+
+#contenedor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#principal {
+  width: 75%;
+}
+#sidebar {
+  width: 25%;
+}
 
 .mat-card#first-card {
   padding: 0;
 }
 
-div#profile-brackground {
+ div#profile-brackground {
   display: flex;
-  z-index: 1;
-}
+/**  z-index: 1; **/
+} 
 
-div#profile-background img {
+div#profile-brackground img {
   width: 100%;
   border-radius: 32px 32px 0 0;
 }
 
-  .profile-image{
+.profile-image{
     border-radius: 50%;
     width: 152px;
     height: 152px;
@@ -74,6 +86,8 @@ div#info-actions {
 
 div#info-actions button {
   margin-right: 8px;
+  margin-left: 10px;
+  margin-bottom: 2px;
 }
 
 div#info-contact span {
@@ -120,15 +134,15 @@ div#info-data ul#info-details li a {
 }
 
 div#info-data ul#info-details li a h2 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   align-self: center;
   vertical-align: baseline;
 }
 
 div#info-data ul#info-details li a img {
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
   margin-right: 8px;
 }
 
