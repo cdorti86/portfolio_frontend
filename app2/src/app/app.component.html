@@ -1,146 +1,23 @@
 <body>
-  <header><h1>Este es el header</h1></header>
-  <nav> <h2>Esta es la barra de navegacion </h2></nav>
-  <section><h3>Esta es section</h3></section>
-  <article><h4>Este es article</h4>
-      <aside><h5>Este es el aside</h5></aside>
-  </article>
   
 <!-- Content -->
-  <div class="card mat-card" id="first-card">
-      <div id="profile-brackground"><img src="https://img.freepik.com/vector-gratis/banner-negro-formas-geometricas-amarillas_1017-32327.jpg?w=996&t=st=1672527704~exp=1672528304~hmac=2dff758972837b775762ade9e40756b86bb68f3a620c372f6ea1a70fac0f6143"></div>
-      <div id="info" style="padding: 16px">
-          <div id="info-img">
-              <img class="profile-image" src="Foto.png" alt="Foto Personal">
-              <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-pencil-square"></i></a></div>
-          </div>
-          <div id="info-data">
-              <div>
-                  <h1>Cristian Corti Ortola</h1>
-                  <div id="info-company">Patagonia Energy SA</div>
-                  <div id="info-contact">
-                      <span>Rincon de los Sauces - Neuquen (Argentina)</span>
-                      <span><a href="#">Información de contacto</a></span>
-                  </div>
-              </div>
-          <ul id="info-details">
-              <li>
-                  <a href="#">
-                      <img src="https://convocatorias.conicet.gov.ar/wp-content/uploads/logo-CONICET_opt.png" alt="Logo CONICET">
-                      <h2>CONICET</h2>
-                  </a>
-              </li>
-              <li>
-                  <a href="#">
-                      <img src="https://ifes.edu.ar/assets/img/logo.png" alt="logo">
-                      <h2>IFES</h2>
-                  </a>
-              </li>
-          </ul>
-          </div>
-      </div> 
-      <div id="info-actions">
-      <button type="button" class="btn btn-primary">Tengo interés en</button>
-      <button type="button" class="btn btn-light">Añadir Sección</button>
-      <button type="button" class="btn btn--light">Más</button>
-      </div>
-  </div>
+<app-encabezado></app-encabezado>
 
-  <div class="card mat-card" id="1">
-      <div class="card-titles">
-          <h2>Acerca de</h2>
-          <div class="btn-edit" onclick="cambiar_parrafo()">
-              <a href="#" class="btn-right">
-                  <i class="bi bi-pencil-square"></i>
-              </a>
-          </div>
-      </div>
+<app-acerca-de></app-acerca-de>
 
-       <!--   <div class="btn-edit2" onclick="editar_acercade()"><a href="#" class="btn-rigth"><i class="fa fa-pen"></i></a></class></div> 
-      </div> -->
-      <div>
-          <p id="text-acercade">Tecnico superior en hidrocarburos</p>
-      </div>
-      <div>
-          <input id="edit-acercade" type="text" oninput="myFunction2(this.value)" style="display:none">
-      </div>
-      <!-- <div>
-          <input id="edit-acercade" type="text" oninput="escribir_acercade(this.value)" style="display:none"> -->
-      <div>
-          <input type="file" id="file1" onchange="ShowFile(this)">
-      </div>
-       
-  </div>
-<div class="card mat-card">
-  <div id="Nombre"></div>
-</div>
+<app-experiencia></app-experiencia>
 
-<div class="card mat-card">
-  <div id="Apellido"></div>
-</div>
+<app-aptitudes></app-aptitudes>
 
-<div class="card mat-card">
-  <div id="Titulos"></div>
-</div>
-<div class="card mat-card">
-  <div id="experience">
-      <div class="card-titles">
-          <h2>Experiencia</h2>
-          <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-plus"></i></a></div>
-      </div>
-      <ul class="items-list">
-          <li>
-              <div class="data-container">
-                  <a href="#">
-                      <div class="logo-image-container"></div>
-                      <div class="list-info"></div>
-                          <div>
-                              <h3>Backedn Developer</h3>
-                              <p>
-                                  Pixar - 
-                                  <span>Jornada parcial</span>
-                              </p>
-                              <h4>mar 2019 - Actualidad - 2 años y 6 meses</h4>
-                              <h4>Buenos Aires, Argentina</h4>
-                          </div>
-                  </a>
-              </div>
-              <div class="data-control"></div>
-          </li>
-      </ul>
-  </div>
-  <div id="education"></div>"
-      <h2>Educación</h2>
-      <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-plus"></i></a></div>
-  </div>
+<app-logros></app-logros>
 
-<div class="card mat-card">
-  <div id="aptitudes">
-      <div class="card-titles">
-          <h2>Aptitudes y validaciones</h2>
-          <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-plus"></i></a></div>
-      </div>
-  </div>
-      <div id="info-actions">
-      <button type="button" class="btn btn-primary">Añadir una aptitud nueva</button>
-      <button type="button" class="btn btn-light">Hacer un test de aptitudes</button>
-      </div>
-  </div>
-
-<div class="card mat-card">
-  <div id="logros">
-      <div class="card-titles">
-          <h2>Logros</h2>
-          <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-plus"></i></a></div>
-      </div>
-  </div>
-</div>
-  <input type="file" id="file1" onchage="showFile1(this)">
 <!--    
 <scrip src="front.js"></scrip>
 aun no se para que es???
 -->
-
+<!-- 
+<input type="file" id="file1" onchage="showFile1(this)">
+-->
 <script scr="ecma_brw.js"></script>
   <script>
   function foo() {
@@ -196,7 +73,5 @@ aun no se para que es???
   }
 
 </script>
-
-<footer><h6>Este es el footer</h6></footer>
 </body>
 <router-outlet></router-outlet>

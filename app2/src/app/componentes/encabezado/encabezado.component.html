@@ -1,0 +1,38 @@
+<div class="card mat-card" id="first-card">
+    <div id="profile-brackground"><img [src]="miPorfolio.backImage"></div>
+    <div id="info" style="padding: 16px">
+        <div id="info-img">
+            <img class="profile-image" src="{{miPorfolio.image}}" alt="Foto Personal">
+            <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-pencil-square"></i></a></div>
+        </div>
+        <div id="info-data">
+            <div>
+                <h1>{{miPorfolio.name}}</h1>
+                <div id="info-company">{{miPorfolio.company.name}}</div>
+                <div id="info-contact">
+                    <span>{{miPorfolio.ubication}}</span>
+                    <span><a href="#">Información de contacto</a></span>
+                </div>
+            </div>
+        <ul id="info-details">
+            <li>
+                <a href="#">
+                    <img src={{miPorfolio.company.img}} alt={{miPorfolio.company.name}}>
+                    <h2>{{miPorfolio.company.name}}</h2>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src={{miPorfolio.school.img}} alt={{miPorfolio.school.name}}>
+                    <h2>{{miPorfolio.school.name}}</h2>
+                </a>
+            </li>
+        </ul>
+        </div>
+    </div> 
+    <div id="info-actions">
+    <button type="button" class="btn btn-primary">Tengo interés en</button>
+    <button type="button" class="btn btn-light">Añadir Sección</button>
+    <button type="button" class="btn btn--light">Más</button>
+    </div>
+</div>
