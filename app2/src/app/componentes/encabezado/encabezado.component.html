@@ -1,40 +1,43 @@
 <div class="card mat-card" id="first-card">
+    <li *ngFor="let persona of miPorfolio">
     <div id="profile-brackground"><img src="https://img.freepik.com/vector-gratis/banner-negro-formas-geometricas-amarillas_1017-32327.jpg?w=996&t=st=1672527704~exp=1672528304~hmac=2dff758972837b775762ade9e40756b86bb68f3a620c372f6ea1a70fac0f6143"></div>
     <div id="info" style="padding: 16px">
         <div id="info-img">
-            <img class="profile-image" src="{{miPorfolio.url_foto}}" alt="Foto Personal">
-            <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-pencil-square"></i></a></div>
+            
+                <img class="profile-image" src="{{persona.url_foto}}" alt="Foto Personal">
+                <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-pencil-square"></i></a></div>
+            
         </div>
         <div id="info-data">
             <div>
-                <h1>{{miPorfolio.nombre}} {{miPorfolio.apellido}}</h1>
-                <div id="info-company">{{miPorfolio.company.name}}</div>
+                <h1>{{persona.nombre}} {{persona.apellido}}</h1>
+                <div id="info-company">{{persona.apellido}}</div>
                 <div id="info-contact">
-                    <span>{{miPorfolio.ubication}}</span>
-                    <span><a href="#">Información de contacto</a></span>
-                    
+                    <span>{{persona.apellido}}</span>
+                    <span><a href="#">Información de contacto</a></span> 
                 </div>
             </div>
         <ul id="info-details">
             <li>
                 <a href="#">
-                    <img src={{miPorfolio.company.img}} alt={{miPorfolio.company.name}}>
-                    <h2>{{miPorfolio.company.name}}</h2>
+                    <img src={{persona.url_foto}} alt={{persona.nombre}}>
+                    <h2>{{persona.nombre}}</h2>
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src={{miPorfolio.school.img}} alt={{miPorfolio.school.name}}>
-                    <h2>{{miPorfolio.school.name}}</h2>
+                    <img src={{persona.url_foto}} alt={{persona.nombre}}>
+                    <h2>{{persona.nombre}}</h2>
                 </a>
             </li>
         </ul>
         </div>
     </div> 
-    <div><h2>Fecha de nacimiento:</h2>{{miPorfolio.fecha_nacimiento}} <h2>e-mail:</h2></div>
+    <div><h2>Fecha de nacimiento:</h2>{{persona.fecha_nacimiento}} <h2>e-mail:{{persona.correo}}</h2></div>
     <div id="info-actions">
     <button type="button" class="btn btn-primary">Tengo interés en</button>
     <button type="button" class="btn btn-light">Añadir Sección</button>
     <button type="button" class="btn btn--light">Más</button>
     </div>
+</li>
 </div>
