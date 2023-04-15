@@ -10,6 +10,7 @@ import { AptitudesComponent } from './componentes/aptitudes/aptitudes.component'
 import { LogrosComponent } from './componentes/logros/logros.component';
 
 import { HttpClientModule} from '@angular/common/http';
+import { NavComponent } from './componentes/nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule} from '@angular/common/http';
     AcercaDeComponent,
     ExperienciaComponent,
     AptitudesComponent,
-    LogrosComponent
+    LogrosComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,

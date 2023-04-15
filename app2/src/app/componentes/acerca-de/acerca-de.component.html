@@ -3,7 +3,7 @@
         <h2>Acerca de</h2>
         <div class="btn-edit" onclick="cambiar_parrafo()">
             <a href="#" class="btn-right">
-                <i class="bi bi-pencil-square"></i>
+                <i class="bi bi-pencil-square" ></i>
             </a>
         </div>
     </div>
@@ -13,12 +13,66 @@
         <p id="text-acercade">Tecnico superior en hidrocarburos</p>
     </div>
     <div>
-        <input id="edit-acercade" type="text" oninput="myFunction2(this.value)" style="display:none">
+        <input id="edit-acercade" type="text" oninput="myFunction2(this.value)" style="display:block">
     </div>
     <!-- <div>
         <input id="edit-acercade" type="text" oninput="escribir_acercade(this.value)" style="display:none"> -->
     <div>
         <input type="file" id="file1" onchange="ShowFile(this)">
     </div>
-     
+    <script scr="ecma_brw.js"></script>
+    <script>
+    function foo() {
+        undefined = 2; // bad ideal
+        console.log(undefined*2);
+        var newDiv = document.createElement("div");
+        var newContent = document.createTextNode("Hola!¿Que tal?");
+        newDiv.appendChild(newContent); // añade texto al div creado
+        // añade el elemento creado y su contenido al DOM
+        var currentDiv = document.getElementById("1");
+        document.body.insertBefore(newDiv,currentDiv);
+    }
+    foo();
+    
+    //funcion que cambia el estilo del input a visible
+    //toma el valor del texto del parrafo con id "text-acercade" lo muestra en consola
+    function cambiar_parrafo(){
+        document.getElementById("edit-acercade").style.display="block";
+        let texto = document.getElementById("text-acercade").innerText;
+        console.log(texto)
+    };
+    function myFunction2(valor){
+        document.getElementById("text-acercade").innerText=valor;
+    };
+  
+    function logMessage(message){
+        console.log(message + "<br>");
+    }
+    //controla si se presiono un enter
+        let textarea=document.getElementById("edit-acercade")
+        textarea.addEventListener('keyup', (e) => {
+        logMessage(`Key "${e.key}" released  [event: keyup]`);
+        if (e.key=="Enter"){
+            document.getElementById("edit-acercade").style.display="none"
+        }
+    });
+  
+    // carga el contenido de un archivo de texto y lo muestra en el parrafo
+    function ShowFile(input) {
+        let file = input.files[0];
+        alert(`File name: ${file.name}`); // eg my.png
+        alert(`Last modified: ${file.lastModified}`); // eG 1552830408824
+  
+        let reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = function() {
+            console.log(reader.result);
+            document.getElementById("text-acercade").innerText=reader.result;
+        };
+        reader.onerror = function() {
+            console.log(reader.error);
+        };
+    }
+  
+  </script>
 </div>
