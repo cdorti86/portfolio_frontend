@@ -26,31 +26,5 @@
             </li>
         </ul>
     </div>
-    <div id="education">
-        <div class="card-titles">
-        <h2>Educación</h2>
-        <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-plus"></i></a></div>
-        </div>
-        <ul class="items-list">
-            <li *ngFor="let education of educationList">
-                <div class="data-container">
-                    <a href="#">
-                        <div class="logo-image-container">
-                        <img class="logo-image" ng-src = "education.img">
-                        </div>
-                        <div class="list-info"></div>
-                            <div>
-                                <h3>{{education.school}}</h3>
-                                <p> {{education.title}}, {{education.score}} </p>
-                                <p><time>{{education.start}}</time> - <time>{{education.end}}</time></p>
-                            </div>
-                    </a>
-                </div>
-                <div class="data-control">
-                    <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-pencil-square"></i></a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+
 </div>

@@ -19,7 +19,7 @@ import javax.persistence.Id;
 public class Usuario implements Serializable {
     
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.SEQUENCE)
     private int id;
     @Basic
     private String email;

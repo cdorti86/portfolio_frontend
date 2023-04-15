@@ -40,6 +40,7 @@
     border-radius: 5%
   } /* . es para seleccionar toda una clase */
 
+
   .btn-edit {
 
     display: block ;
@@ -169,3 +170,7 @@
       display: flex;
       color: black;
     }
+
+    .caja {
+    margin: 10px 
+  }

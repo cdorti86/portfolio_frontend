@@ -11,6 +11,7 @@ import { LogrosComponent } from './componentes/logros/logros.component';
 
 import { HttpClientModule} from '@angular/common/http';
 import { NavComponent } from './componentes/nav/nav.component';
+import { EducacionComponent } from './componentes/educacion/educacion.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavComponent } from './componentes/nav/nav.component';
     ExperienciaComponent,
     AptitudesComponent,
     LogrosComponent,
-    NavComponent
+    NavComponent,
+    EducacionComponent
   ],
   imports: [
     BrowserModule,
