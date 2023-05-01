@@ -26,12 +26,7 @@
   
 
 
-  #first-card {
-    border-color: black;
-    border-width: 4px;
-    border-style: ridge;
-    border-radius: 10%
-  } # es para seleccionar ID del HTML */
+ # es para seleccionar ID del HTML */
 
 /* .card_mat-card {
     border-color: gray blueviolet;
@@ -40,10 +35,22 @@
     border-radius: 5%
   } /* . es para seleccionar toda una clase */
 
+  #barra {
+    border-color: black;
+    border-width: 4px;
+    border-style: ridge;
+    background-color: #ABBAEA;
+
+  }
   .btn-edit {
 
     display: block ;
   }
+
+  .btn-nav {
+    margin: 6px 6px;
+  }
+
   .mat-card {
     border-radius: 32px;
     margin: 10px 10px;
@@ -152,6 +159,11 @@
     margin-right: 8px;
   }
   
+  .button {
+    width: 40px;
+    height: 40px;
+    margin: 2em 0 ;    
+  }
   ul.items-list {
     list-style: none inside;
   }
@@ -169,3 +181,7 @@
       display: flex;
       color: black;
     }
+
+    .caja {
+    margin: 10px 
+  }
