@@ -1,0 +1,18 @@
+<div class="card mat-card">
+    <div id="proyecto" class="about">
+        <div class="card-titles">
+            <h2>Proyectos</h2>
+            <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-plus"></i></a></div>
+        </div>
+    <div>
+        <li *ngFor="let proyecto of miPorfolio">
+            <div class="caja">
+                <h3>Nombre proyecto: {{proyecto.nombre}}</h3>
+                <p>Fecha de realizacion: {{proyecto.fecha_realizacion}}</p>
+                <p>Descripcion: {{proyecto.descripcion}}</p>
+                <span><a href="http://{{proyecto.url_proyecto}}">{{proyecto.url_proyecto}}
+                    <p><img src={{proyecto.imagen_proyecto}} alt={{proyecto.nombre}}></p></a></span>
+            </div>
+        </li>
+    </div>
+</div>

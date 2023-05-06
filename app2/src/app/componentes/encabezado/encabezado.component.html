@@ -1,9 +1,11 @@
 <div class="card mat-card" id="first-card">
-    <li *ngFor="let persona of miPorfolio">
+    <div id="barra">
+        <img src="http://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1676134779/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%2817%29.png" alt="argpprod">
+        </div>
     <div id="profile-brackground"><img src="https://img.freepik.com/vector-gratis/banner-negro-formas-geometricas-amarillas_1017-32327.jpg?w=996&t=st=1672527704~exp=1672528304~hmac=2dff758972837b775762ade9e40756b86bb68f3a620c372f6ea1a70fac0f6143"></div>
     <div id="info" style="padding: 16px">
+        <li *ngFor="let persona of miPorfolio">
         <div id="info-img">
-            
                 <img class="profile-image" src="{{persona.url_foto}}" alt="Foto Personal">
                 <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-pencil-square"></i></a></div>
             
@@ -32,12 +34,8 @@
             </li>
         </ul>
         </div>
+    </li>
     </div> 
-    <div><h2>Fecha de nacimiento:</h2>{{persona.fecha_nacimiento}} <h2>e-mail:{{persona.correo}}</h2></div>
-    <div id="info-actions">
-    <button type="button" class="btn btn-primary">Tengo interés en</button>
-    <button type="button" class="btn btn-light">Añadir Sección</button>
-    <button type="button" class="btn btn--light">Más</button>
-    </div>
-</li>
+    <div>        <li *ngFor="let persona of miPorfolio">
+        <h2>Fecha de nacimiento:</h2>{{persona.fecha_nacimiento}} <h2>e-mail:{{persona.correo}}</h2></div>
 </div>
