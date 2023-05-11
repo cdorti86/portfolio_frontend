@@ -18,7 +18,7 @@ x();
 console.log("Valor de j?? " + j);
 console.log(i==j);
 // ver fechas (creo que es Typescript)
-let date: Date = new Date();
+let Date: Date = new Date();
 date.setDate(13)
 date.setMonth(11)
 date.setFullYear(2021)

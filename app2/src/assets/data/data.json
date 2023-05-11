@@ -1,0 +1,55 @@
+{
+    "name": "Cristian Corti",
+    "backImage": "https://img.freepik.com/vector-gratis/banner-negro-formas-geometricas-amarillas_1017-32327.jpg?w=996&t=st=1672527704~exp=1672528304~hmac=2dff758972837b775762ade9e40756b86bb68f3a620c372f6ea1a70fac0f6143",
+    "image": "../assets/Img/Foto.png",
+    "position": "Planificador",
+    "company": {
+        "name": "Patagonia Energy S.A.",
+        "img": "../assets/Img/Logo_PESA.png",
+        "url": "#"
+    },
+    "school": {
+        "name": "IFES",
+        "img": "https://ifes.edu.ar/assets/img/logo.png",
+        "url": "#"
+    },
+    "ubication": "Rincon de los Sauces (Argentina)",
+    "about": "Tecnico superior en hidrocarburos",
+    "experience": [{
+        "name": "Backedn Developer",
+        "company": "Pixar",
+        "time": "Jornada parcial",
+        "date": "mar 2019 - Actualidad - 2 años y 6 meses",
+        "ubication": "Buenos Aires, Argentina"
+    },
+    {
+        "name": "Audio",
+        "company": "Staccato",
+        "time": "Jornada parcial",
+        "date": "mar 2021 - Actualidad - 2 Años",
+        "ubication": "Neuquen, Argentina"
+    }
+],
+    "education": [{
+        "school": "UTN",
+        "title": "Ingeniería",
+        "img": "https://www.ort.edu.ar/img/LogoOrtArgWeb2017.jpg",
+        "score": 0,
+        "start": 2019,
+        "end": 2023
+    },
+    {
+        "school": "IFES",
+        "title": "Tecnicatura",
+        "img": "https://ifes.edu.ar/assets/img/logo.png",
+        "score": 8,
+        "start": 2020,
+        "end": 2022
+    }
+    ],
+"aptitudes": [{
+    "name": "Resolución de problemas",
+    "progress": 75,
+    "confirms": 2
+}]
+    }

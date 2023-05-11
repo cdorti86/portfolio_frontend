@@ -1,0 +1,41 @@
+<div class="card mat-card" id="first-card">
+    <div id="barra">
+        <img src="http://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1676134779/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%2817%29.png" alt="argpprod">
+        </div>
+    <div id="profile-brackground"><img src="https://img.freepik.com/vector-gratis/banner-negro-formas-geometricas-amarillas_1017-32327.jpg?w=996&t=st=1672527704~exp=1672528304~hmac=2dff758972837b775762ade9e40756b86bb68f3a620c372f6ea1a70fac0f6143"></div>
+    <div id="info" style="padding: 16px">
+        <li *ngFor="let persona of miPorfolio">
+        <div id="info-img">
+                <img class="profile-image" src="{{persona.url_foto}}" alt="Foto Personal">
+                <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-pencil-square"></i></a></div>
+            
+        </div>
+        <div id="info-data">
+            <div>
+                <h1>{{persona.nombre}} {{persona.apellido}}</h1>
+                <div id="info-company">{{persona.apellido}}</div>
+                <div id="info-contact">
+                    <span>{{persona.apellido}}</span>
+                    <span><a href="#">Información de contacto</a></span> 
+                </div>
+            </div>
+        <ul id="info-details">
+            <li>
+                <a href="#">
+                    <img src={{persona.url_foto}} alt={{persona.nombre}}>
+                    <h2>{{persona.nombre}}</h2>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src={{persona.url_foto}} alt={{persona.nombre}}>
+                    <h2>{{persona.nombre}}</h2>
+                </a>
+            </li>
+        </ul>
+        </div>
+    </li>
+    </div> 
+    <div>        <li *ngFor="let persona of miPorfolio">
+        <h2>Fecha de nacimiento:</h2>{{persona.fecha_nacimiento}} <h2>e-mail:{{persona.correo}}</h2></div>
+</div>
