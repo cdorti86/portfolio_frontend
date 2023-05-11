@@ -4,7 +4,7 @@
 
 export const environment = {
     production: false,
-    apiBaseUrl:'https://porfoliobackend-sti4.onrender.com:8080',
+    apiBaseUrl:'https://porfoliobackend-sti4.onrender.com',
     firebaseConfig : {
       apiKey: "AIzaSyDKAW31dRIM5nuxTCY7T7ar8ovUR1yHZgI",
       authDomain: "login-de-porfolio.firebaseapp.com",
