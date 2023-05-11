@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       const { params } = paramMap
       console.log(params.variable);
     })
+    this.usuarioLogueado = this.authService.estadoinicio()
   }
   get password() {
     return this.form.get('password');
@@ -41,36 +42,18 @@ export class LoginComponent implements OnInit {
     return this.form.get('email');
   }
 
-  // Lo cree para poder seguir con el resto
   onLogin(form: User) {
     this.authService.login(form);
-    this.authFire.authState.subscribe(user=>
-      { if (user) { this.usuarioLogueado  = true 
-//      this.router.navigate(['/'])
-    }
-    else
-    { this.usuarioLogueado = false
-//      this.router.navigate(['/Login'])
-    } }
-    );
-    console.log("nuevo mensaje" + this.usuarioLogueado); 
-};
     
-//      );
-//    }
+    console.log("nuevo mensaje en el login" + this.authService.usuarioLogueado); 
+};
 
-  // onEnviar(event: Event) {
-    // Detenemos la propagación o ejecución del compotamiento submit de un form
-  //  event.preventDefault;
-  //  if (this.form.valid) {
-      // Llamamos a nuestro servicio para enviar los datos al servidor
-      // También podríamos ejecutar alguna lógica extra
-  //    alert("Todo salio bien ¡Enviar formuario!")
-  //  } else {
-      // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
-  //    this.form.markAllAsTouched();
-  //  }
-  //}
+  logout() {
+    this.authService.logout();
+    console.log("boton funciona");
+    this.router.navigate(['/'])
+  }
+  
   atras(): void {
     this.location.back();
   }

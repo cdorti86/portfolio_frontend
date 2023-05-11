@@ -10,9 +10,5 @@ export class NavComponent {
 
 constructor(private authService: AuthService) {}
 
-logout() {
-  this.authService.logout();
-  console.log("boton funciona");
-}
 
 }

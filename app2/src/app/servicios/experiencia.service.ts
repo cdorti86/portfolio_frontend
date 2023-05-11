@@ -13,18 +13,19 @@ private apiBaseUrl=environment.apiBaseUrl;
   constructor(private http:HttpClient) { }
  
   public obtenerdatosexperiencia(): Observable<any> {
-    return this.http.get<Experiencia[]>('http://localhost:8080/lista/experiencias_laborales'); 
+    return this.http.get<Experiencia[]>(`${this.apiBaseUrl}/lista/experiencias_laborales`); 
 }
 
 public obtenerunaexperiencia(): Observable<Experiencia> {
   return this.http.get<Experiencia>(`${this.apiBaseUrl}/buscar/experiencia_laboral/4`); 
 }
 public altaexperiencia(experiencia: Experiencia): Observable<Experiencia> {
-    return this.http.post<Experiencia>('http://localhost:8080/nuevo/experiencia_laboral', experiencia);
+  console.log(experiencia)  
+  return this.http.post<Experiencia>(`${this.apiBaseUrl}/nuevo/experiencia_laboral`, experiencia);
   } 
 
   public actualizarexperiencia(experiencia: Experiencia):Observable <any> {
-    return this.http.put('http://localhost:8080/modificar/experiencia_laboral', experiencia);
+    return this.http.put(`${this.apiBaseUrl}/modificar/experiencia_laboral`, experiencia);
   }
 
   public eliminarexperiencia(Id: number):Observable <void>{

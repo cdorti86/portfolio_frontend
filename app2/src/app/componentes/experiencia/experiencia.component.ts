@@ -5,8 +5,6 @@ import { NgForm } from '@angular/forms';
 import { Experiencia } from 'src/app/Model/experiencia';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
-import { PorfolioService } from 'src/app/servicios/porfolio.service';
-
 
 @Component({
   selector: 'app-experiencia',
@@ -18,21 +16,15 @@ export class ExperienciaComponent implements OnInit {
   public Experiencias: Experiencia[] = [];
   public actualizarExperiencia: Experiencia | undefined;
   public eliminarExperiencia: Experiencia | undefined;
-  constructor(private datosPorfolio: ExperienciaService, private loginUser: AuthService,
-    private authFire: AngularFireAuth) { }
-
-
- 
+  constructor(private datosPorfolio: ExperienciaService, private loginUser: AuthService) 
+  { }
 
   ngOnInit(): void {
     this.datosPorfolio.obtenerdatosexperiencia().subscribe(data => {
       this.Experiencias = data;
-    })
-  //  this.authFire.authState.subscribe(user=>{ if (user) { this.usuarioLogueado  = true }
-  //  else { this.usuarioLogueado = false} 
-  //  console.log(this.usuarioLogueado); } );
+    });
   this.usuarioLogueado = this.loginUser.estadoinicio()
-    console.log(this.loginUser.estadoinicio());
+    console.log("esta iniciado en el componente experiencia?" + this.loginUser.estadoinicio());
   }
 
   public obtenerexperiencia(): void {

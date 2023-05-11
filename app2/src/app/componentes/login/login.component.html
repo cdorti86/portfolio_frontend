@@ -1,39 +1,44 @@
 <div class="card mt-4">
     <h4 class="card-header">Inicio de Sesión</h4>
- <form [formGroup]="form"  (ngSubmit)="onLogin(form.value)"> 
-    <div class="card-body">
-        <div class="mb-3">
-        <label class="form-label" for="email">Email: </label>                          
-        <input type="email" formControlName="email" 
-        [ngClass]="{'is-invalid': email?.errors && email?.touched, 'is-valid': !email?.errors && email?.touched}">
-    </div>
-    <!-- Gracias al getter que configuramos en el controlador -->
-    <div *ngIf="email?.errors  && email?.touched">    
-        <p *ngIf="email?.hasError('required')" class="text-danger">
-            El email es requerido.
-        </p>
-        <p *ngIf="email?.hasError('email')" class="text-danger">
-            El formato del email debe ser válido.
-          </p>
-    </div>
+    <form [formGroup]="form" (ngSubmit)="onLogin(form.value)">
+        <div class="card-body">
+            <div class="mb-3">
+                <label class="form-label" for="email">Email: </label>
+                <input type="email" formControlName="email"
+                    [ngClass]="{'is-invalid': email?.errors && email?.touched, 'is-valid': !email?.errors && email?.touched}">
+            </div>
+            <!-- Gracias al getter que configuramos en el controlador -->
+            <div *ngIf="email?.errors  && email?.touched">
+                <p *ngIf="email?.hasError('required')" class="text-danger">
+                    El email es requerido.
+                </p>
+                <p *ngIf="email?.hasError('email')" class="text-danger">
+                    El formato del email debe ser válido.
+                </p>
+            </div>
 
-    <br/>
-    <div>
-        <label class="form-label" for="exampleInputPassword1" class="form-label">Password: </label>
-        <input type="password" formControlName="password" 
-        [ngClass]="{'is-invalid': password?.errors && password?.touched, 'is-valid': !password?.errors && password?.touched}">
-    </div>
-    <!-- Gracias al getter que configuramos en el controlador -->
-    <div *ngIf="password?.errors  && password?.touched">
-    <p *ngIf="password?.hasError('required')" class="text-danger">
-      El password es requerido.
-    </p>
-  </div>
-    <br/>
-    <div>
-        <button   type="submit">Iniciar Sesión</button>
+            <br />
+            <div>
+                <label class="form-label" for="exampleInputPassword1" class="form-label">Password: </label>
+                <input type="password" formControlName="password"
+                    [ngClass]="{'is-invalid': password?.errors && password?.touched, 'is-valid': !password?.errors && password?.touched}">
+            </div>
+            <!-- Gracias al getter que configuramos en el controlador -->
+            <div *ngIf="password?.errors  && password?.touched">
+                <p *ngIf="password?.hasError('required')" class="text-danger">
+                    El password es requerido.
+                </p>
+            </div>
+            <br />
+            <div>
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="m-5">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary" (click)="logout()">Cerrar Sesion</button>
+        <button type="button" class="btn btn-primary" (click)="atras()">Atras</button>
     </div>
 </div>
-</form>
-</div>
-<button (click)="atras()">Atras</button>
