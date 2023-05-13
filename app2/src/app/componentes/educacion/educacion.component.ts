@@ -1,5 +1,5 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Educacion } from 'src/app/Model/educacion';
 import { AuthService } from 'src/app/servicios/auth.service';
@@ -10,7 +10,7 @@ import { EducacionService } from 'src/app/servicios/educacion.service';
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.css']
 })
-export class EducacionComponent {
+export class EducacionComponent implements OnInit {
   usuarioLogueado: boolean = false;
   public Educaciones: Educacion[] = [];
   public actualizarEducacion: Educacion | undefined;
@@ -58,7 +58,7 @@ export class EducacionComponent {
   }
 
   public altaeducacion(addForm: NgForm) {
-    document.getElementById('add-experiencia-form')?.click();
+    document.getElementById('add-educacion-form')?.click();
     this.datosPorfolio.altaeducacion(addForm.value).subscribe({
       next: (response: Educacion) => {
         console.log(response);

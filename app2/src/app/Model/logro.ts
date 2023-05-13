@@ -1,6 +1,6 @@
 export class Logro {
 
     id!: Number;
-    Logro!: String ;
-    Descripcion!: String ;
+    logro!: String ;
+    descripcion!: String ;
 }

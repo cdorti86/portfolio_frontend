@@ -1,8 +1,102 @@
 <div class="card mat-card">
-    <div id="logros">
+    <div id="logro">
         <div class="card-titles">
-            <h2>Logros</h2>
-            <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-plus"></i></a></div>
+            <h2>Logro</h2>
+            <div>
+                <button *ngIf="usuarioLogueado" (click)="onOpenModal('add')"  type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addLogroModal" data-bs-whatever="@getbootstrap">Añadir logro</button>
+              </div>
         </div>
-    </div>
+      <!-- Modal añadir -->
+      <div class="modal fade" id="addLogroModal" tabindex="-1" aria-labelledby="addLogroModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="addLogroModalLabel">Añadir logro</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form #addForm="ngForm" (ngSubmit)="altalogro(addForm)">
+                <div class="form-group">
+                      <label for="logro">Logro</label>
+                      <input type="text" ngModel name="logro" class="form-control" id="logro" placeholder="logro" required/>
+                    </div>
+                    <div class="form-group">
+                        <label for="descripcion">Descripcion </label>
+                        <input type="text" ngModel name="descripcion" class="form-control" id="descripcion" placeholder="descripcion" required/>
+                      </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="add-logro-form" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" (click)="altalogro(addForm)">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    <section>
+      <ul class="items-list">
+        <li *ngFor="let logro of Logros">
+          <div class="data-container">
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <p><a *ngIf="usuarioLogueado" (click)="onOpenModal('edit', logro)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editLogroModal" data-bs-toggle="modal">
+              <i class="bi bi-pencil"></i></a>
+              <span><a *ngIf="usuarioLogueado" (click)="onOpenModal('delete', logro)" class="btn btn-secondary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Delete" data-bs-target="#deleteLogroModal" data-bs-toggle="modal">
+              <i class="bi bi-trash"></i></a> </span> </p>
+            </div>
+            <div class="list-info"></div>
+            <div>
+              <h3>Logro: {{logro.logro}}</h3>
+              <h4><p>Descripción: {{logro.descripcion}}</p></h4>
+            </div>
+          </div>
+      <!-- Modal eliminar -->
+          <div tabindex="-1" data-bs-toggle="modal" data-bs-target="#deleteLogroModal" class="modal fade" id="deleteLogroModal" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteLogroModalLabel">Eliminar Logro</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+               <div class="modal-body">
+                  Estas seguro que quieres eliminar el logro {{eliminarLogro?.logro}}?
+              </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                  <button (click)="eliminarlogro(eliminarLogro?.id)" type="button" class="btn btn-danger">Si</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+      <!-- Modal editar -->
+      <div class="modal fade" id="editLogroModal" tabindex="-1" aria-labelledby="editLogroModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="editLogroModalLabel">Editar logro</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form #editForm="ngForm">
+                <div class="form-group">
+                    <label for="logro">Logro</label>
+                    <input type="text" ngModel="{{actualizarLogro?.logro}}" name="logro" class="form-control" id="logro" placeholder="logro" required/>
+                  </div>
+                  <input type="hidden" ngModel="{{actualizarLogro?.id}}" name="id" class="form-control" id="id" placeholder=""/>
+                  <div class="form-group">
+                      <label for="descripcion"> Descripcion </label>
+                      <input type="text" ngModel="{{actualizarLogro?.descripcion}}" name="descripcion" class="form-control" id="descripcion" placeholder="descripcion" required/>
+                    </div>
+            </form>                
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="update-logro-form" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button (click)="actualizarlogro(editForm.value)" type="submit" class="btn btn-primary">Actualizar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+        </li>
+      </ul>
+    </section>
 </div>

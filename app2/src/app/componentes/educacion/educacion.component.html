@@ -1,136 +1,136 @@
 <div class="card mat-card">
-    <div id="educacion">
-        <div class="card-titles">
-            <h2>Educacion</h2>
-            <div>
-                <button *ngIf="usuarioLogueado" (click)="onOpenModal('add')"  type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addEducacionModal" data-bs-whatever="@getbootstrap">Añadir educación</button>
-              </div>
-        </div>
-      <!-- Modal añadir -->
-      <div class="modal fade" id="addEducacionModal" tabindex="-1" aria-labelledby="addEducacionModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="addEducacionModalLabel">Añadir educación</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div id="educacion">
+      <div class="card-titles">
+          <h2>Educacion</h2>
+          <div>
+              <button *ngIf="usuarioLogueado" (click)="onOpenModal('add')"  type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addEducacionModal" data-bs-whatever="@getbootstrap">Añadir educación</button>
             </div>
-            <div class="modal-body">
-              <form #addForm="ngForm" (ngSubmit)="altaeducacion(addForm)">
-                <div class="form-group">
-                      <label for="titulo">Titulo</label>
-                      <input type="text" ngModel name="titulo" class="form-control" id="titulo" placeholder="Titulo" required/>
+      </div>
+    <!-- Modal añadir -->
+    <div class="modal fade" id="addEducacionModal" tabindex="-1" aria-labelledby="addEducacionModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="addEducacionModalLabel">Añadir Educacion</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form #addForm="ngForm" (ngSubmit)="altaeducacion(addForm)">
+              <div class="form-group">
+                    <label for="titulo">Titulo</label>
+                    <input type="text" ngModel name="titulo" class="form-control" id="titulo" placeholder="titulo" required/>
+                  </div>
+                  <div class="form-group">
+                      <label for="centro_educacion">Centro de educación</label>
+                      <input type="text" ngModel name="centro_educacion" class="form-control" id="centro_educacion" placeholder="centro_educacion" required/>
                     </div>
-                    <div class="form-group">
-                        <label for="centro_educacion">Centro de educación</label>
-                        <input type="text" ngModel name="centro_educacion" class="form-control" id="centro_educacion" placeholder="centro_educacion" required/>
-                      </div>                    
                     <div class="form-group">
                       <label for="fecha_inicio">Fecha Inicio</label>
                       <input type="date" ngModel name="fecha_inicio" class="form-control" id="fecha_inicio" placeholder="fecha_inicio" required/>
-                    </div>
-                    <div class="form-group">
-                        <label for="fecha_final">Fecha finalizacion</label>
-                        <input type="date" ngModel name="fecha_final" class="form-control" id="fecha_de_Finalizacion" placeholder="Fecha finalizacion">
-                      </div>
-                    <div class="form-group">
-                        <label for="finalizado">Esta cursando?</label>
-                        <input type="checkbox" ngModel name="finalizado" class="form-check-input" id="finalizado" placeholder="finalizado">
-                      </div>
-                      <div class="form-group">
-                        <label for="promedio">Promedio</label>
-                        <input type="number" ngModel name="promedio" class="form-control" id="promedio" placeholder="promedio">
-                      </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" id="add-educacion-form" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" (click)="altaeducacion(addForm)">Enviar</button>
-            </div>
+                    </div>                    
+                  <div class="form-group">
+                    <label for="fecha_final">Fecha finalización</label>
+                    <input type="date" ngModel name="fecha_final" class="form-control" id="fecha_final" placeholder="fecha_final">
+                  </div>
+                  <div class="form-group">
+                    <label for="finalizado">Esta cursando?</label>
+                    <input type="checkbox" ngModel name="finalizado" class="form-check-input" id="finalizado" placeholder="finalizado">
+                  </div>                  
+                  <div class="form-group">
+                    <label for="promedio">Promedio</label>
+                    <input type="number" ngModel name="promedio" class="form-control" id="promedio" placeholder="promedio">
+                  </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="add-educacion-form" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" (click)="altaeducacion(addForm)">Enviar</button>
           </div>
         </div>
       </div>
-  
-    <section>
-      <ul class="items-list">
-        <li *ngFor="let educacion of Educaciones">
-          <div class="data-container">
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <p><a *ngIf="usuarioLogueado" (click)="onOpenModal('edit', educacion)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editEducacionModal" data-bs-toggle="modal">
-              <i class="bi bi-pencil"></i></a>
-              <span><a *ngIf="usuarioLogueado" (click)="onOpenModal('delete', educacion)" class="btn btn-secondary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Delete" data-bs-target="#deleteEducacionModal" data-bs-toggle="modal">
-              <i class="bi bi-trash"></i></a> </span> </p>
-            </div>
-            <div class="list-info"></div>
-            <div>
-              <h3>Titulo: {{educacion.titulo}}</h3>
-              <p>Centro de educación: {{educacion.centro_educacion}} - ¿Esta cursando?: <span>{{educacion.finalizado}}</span> </p>
-              <h4>Fecha de Inicio: {{educacion.fecha_inicio}} - Hasta: {{educacion.fecha_final}}</h4>
-              <h4>Promedio: {{educacion.promedio}}</h4>
-            </div>
+    </div>
+  <!-- Vista en pagina -->
+  <section>
+    <ul class="items-list">
+      <li *ngFor="let educacion of Educaciones">
+        <div class="data-container">
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <p><a *ngIf="usuarioLogueado" (click)="onOpenModal('edit', educacion)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editEducacionModal" data-bs-toggle="modal">
+            <i class="bi bi-pencil"></i></a>
+            <span><a *ngIf="usuarioLogueado" (click)="onOpenModal('delete', educacion)" class="btn btn-secondary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Delete" data-bs-target="#deleteEducacionModal" data-bs-toggle="modal">
+            <i class="bi bi-trash"></i></a> </span> </p>
           </div>
-      <!-- Modal eliminar educacion -->
-          <div tabindex="-1" data-bs-toggle="modal" data-bs-target="#deleteEducacionModal" class="modal fade" id="deleteEducacionModal" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                <h1 class="modal-title fs-5" id="deleteEducacionModalLabel">Eliminar educación</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-               <div class="modal-body">
-                  Estas seguro que quieres eliminar la educación {{eliminarEducacion?.titulo}}?
-              </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                  <button (click)="eliminareducacion(eliminarEducacion?.id)" type="button" class="btn btn-danger">Si</button> -->
-                </div>
-              </div>
-            </div>
+          <div class="list-info"></div>
+          <div>
+            <h3>Titulo: {{educacion.titulo}}</h3>
+            <p>Centro de educación: {{educacion.centro_educacion}} - ¿Esta cursando?: <span>{{educacion.finalizado}}</span> </p>
+            <h4>Fecha de Inicio: {{educacion.fecha_inicio}} - Hasta: {{educacion.fecha_final}}</h4>
+            <h4>Promedio: {{educacion.promedio}}</h4>
           </div>
-      <!-- Modal editar -->
-      <div class="modal fade" id="editEducacionModal" tabindex="-1" aria-labelledby="editEducacionModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="editEducacionModalLabel">Editar educacion</h1>
+        </div>
+    <!-- Modal eliminar -->
+        <div tabindex="-1" data-bs-toggle="modal" data-bs-target="#deleteProyectoModal" class="modal fade" id="deleteProyectoModal" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+              <h1 class="modal-title fs-5" id="deleteEducacionModalLabel">Eliminar Educacion</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-              <form #editForm="ngForm">
+             <div class="modal-body">
+                Estas seguro que quieres eliminar la educacion {{eliminarEducacion?.titulo}}?
+            </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button (click)="eliminareducacion(eliminarEducacion?.id)" type="button" class="btn btn-danger">Si</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- Modal editar -->
+    <div class="modal fade" id="editEducacionModal" tabindex="-1" aria-labelledby="editEducacionModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="editEducacionModalLabel">Editar educación</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form #editForm="ngForm">
+              <div class="form-group">
+                  <label for="titulo">Titulo</label>
+                  <input type="text" ngModel="{{actualizarEducacion?.titulo}}" name="titulo" class="form-control" id="titulo" placeholder="titulo" required/>
+                </div>
+                <input type="hidden" ngModel="{{actualizarEducacion?.id}}" name="id" class="form-control" id="id" placeholder=""/>
                 <div class="form-group">
-                    <label for="titulo">Titulo</label>
-                    <input type="text" ngModel="{{actualizarEducacion?.titulo}}" name="titulo" class="form-control" id="titulo" placeholder="Titulo" required/>
+                    <label for="centro_educacion">Centro de educación</label>
+                    <input type="text" ngModel="{{actualizarEducacion?.centro_educacion}}" name="centro_educacion" class="form-control" id="centro_educacion" placeholder="centro_educacion" required/>
                   </div>
-                  <input type="hidden" ngModel="{{actualizarEducacion?.id}}" name="id" class="form-control" id="id" placeholder=""/>
                   <div class="form-group">
-                      <label for="centro_educacion">Centro educación</label>
-                      <input type="text" ngModel="{{actualizarEducacion?.centro_educacion}}" name="centro_educacion" class="form-control" id="centro_educacion" placeholder="centro_educacion" required/>
-                    </div>                  
-                  <div class="form-group">
-                    <label for="fecha_inicio"> Fecha Inicio</label>
-                    <input type="date" ngModel="{{actualizarEducacion?.fecha_inicio}}" name="fecha_inicio" class="form-control" id="fecha_inicio" placeholder="fecha_inicio" required/>
+                    <label for="fecha_inicio">Fecha Inicio</label>
+                 <input type="date" ngModel="{{actualizarEducacion?.fecha_inicio}}" name="fecha_inicio" class="form-control" id="fecha_inicio" placeholder="fecha_inicio" required/>
                   </div>
                   <div class="form-group">
                     <label for="fecha_final"> Fecha finalizacion</label>
                     <input type="date" ngModel="{{actualizarEducacion?.fecha_final}}" name="fecha_final" class="form-control" id="fecha_final" placeholder="fecha_final">
-                  </div>
-                  <div class="form-group">
-                    <label for="finalizado">¿Esta cursando?</label>
-                    <input type="text" ngModel="{{actualizarEducacion?.finalizado}}" name="finalizado" class="form-control" id="finalizado" placeholder="finalizado">
-                  </div>
-                  <div class="form-group">
-                    <label for="promedio">Promedio</label>
-                 <input type="text" ngModel="{{actualizarEducacion?.promedio}}" name="promedio" class="form-control" id="promedio" placeholder="promedio" required/>
-                  </div>  
-            </form>                
-            </div>
-            <div class="modal-footer">
-              <button type="button" id="update-experiencia-form" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-              <button (click)="actualizareducacion(editForm.value)" type="submit" class="btn btn-primary">Actualizar</button>
-            </div>
+                  </div>                 
+                <div class="form-group">
+                  <label for="finalizado">¿Esta cursando?</label>
+                  <input type="text" ngModel="{{actualizarEducacion?.finalizado}}" name="finalizado" class="form-control" id="finalizado" placeholder="finalizado">
+                </div>
+                <div class="form-group">
+                  <label for="promedio">Promedio</label>
+                  <input type="number" ngModel="{{actualizarEducacion?.promedio}}" name="promedio" class="form-control" id="promedio" placeholder="promedio">
+                </div>
+          </form>                
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="update-educacion-form" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button (click)="actualizareducacion(editForm.value)" type="submit" class="btn btn-primary">Actualizar</button>
           </div>
         </div>
       </div>
-        </li>
-      </ul>
-    </section>
+    </div>
+      </li>
+    </ul>
+  </section>
 </div>
