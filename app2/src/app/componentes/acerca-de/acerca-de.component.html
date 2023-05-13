@@ -96,13 +96,13 @@
                                     <div class="modal-body">
                                         <form #editForm="ngForm">
                                             <div class="form-group">
+                                                <input type="hidden" ngModel="{{actualizarSobre_mi?.id}}" name="id"
+                                                class="form-control" id="id" placeholder="" />
                                                 <label for="descripcion">Descripción:</label>
                                                 <input type="text" ngModel="{{actualizarSobre_mi?.descripcion}}"
                                                     name="descripcion" class="form-control" id="descripcion"
                                                     placeholder="descripcion" required />
                                             </div>
-                                            <input type="hidden" ngModel="{{actualizarSobre_mi?.id}}" name="id"
-                                                class="form-control" id="id" placeholder="" />
                                         </form>
                                     </div>
                                     <div class="modal-footer">
