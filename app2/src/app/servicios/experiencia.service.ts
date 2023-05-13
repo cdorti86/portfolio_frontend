@@ -16,8 +16,8 @@ private apiBaseUrl=environment.apiBaseUrl;
     return this.http.get<Experiencia[]>(`${this.apiBaseUrl}/lista/experiencias_laborales`); 
 }
 
-public obtenerunaexperiencia(): Observable<Experiencia> {
-  return this.http.get<Experiencia>(`${this.apiBaseUrl}/buscar/experiencia_laboral/4`); 
+public obtenerunaexperiencia(Id: number): Observable<Experiencia> {
+  return this.http.get<Experiencia>(`${this.apiBaseUrl}/buscar/experiencia_laboral/${Id}`); 
 }
 public altaexperiencia(experiencia: Experiencia): Observable<Experiencia> {
   console.log(experiencia)  
