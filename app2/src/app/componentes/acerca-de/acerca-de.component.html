@@ -1,14 +1,101 @@
 <div class="card mat-card" id="1">
     <div class="card-titles">
+
+        <div id="acerca_de">
+            <div class="card-titles">
+                <h2>Sobre mi</h2>
+                <div>
+                    <button *ngIf="usuarioLogueado" (click)="onOpenModal('add')"  type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addSobre_miModal" data-bs-whatever="@getbootstrap">Añadir informacion</button>
+                </div>
+              <!-- Modal añadir -->
+              <div class="modal fade" id="addSobre_miModal" tabindex="-1" aria-labelledby="addSobre_miModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="addSobre_miModalLabel">Añadir</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form #addForm="ngForm" (ngSubmit)="altasobre_mi(addForm)">
+                        <div class="form-group">
+                              <label for="descripcion">Descripcion</label>
+                              <input type="text" ngModel name="descripcion" class="form-control" id="descripcion" placeholder="descripcion" required/>
+                            </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" id="add-sobre_mi-form" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                      <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" (click)="altasobre_mi(addForm)">Enviar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <section>
+                <ul class="items-list">
+                    <li *ngFor="let sobre_mi of Sobre_mis">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <p><a *ngIf="usuarioLogueado" (click)="onOpenModal('edit', sobre_mi)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editExperienciaModal" data-bs-toggle="modal">
+                            <i class="bi bi-pencil"></i></a>
+                          </div>
+                        <div class="data-container">
+                            <!--           <div class="btn-group" role="group" aria-label="Basic example">
+              <p><a *ngIf="usuarioLogueado" (click)="onOpenModal('edit', experiencia)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editExperienciaModal" data-bs-toggle="modal">
+              <i class="bi bi-pencil"></i></a>
+              <span><a *ngIf="usuarioLogueado" (click)="onOpenModal('delete', experiencia)" class="btn btn-secondary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Delete" data-bs-target="#deleteExperienciaModal" data-bs-toggle="modal">
+              <i class="bi bi-trash"></i></a> </span> </p>
+            </div>
+-->
+                            <div class="list-info"></div>
+                            <div>
+                                <h3>{{sobre_mi.descripcion}}</h3>
+                            </div>
+                        </div>
+                        <!-- Modal editar -->
+                        <div class="modal fade" id="editLogroModal" tabindex="-1" aria-labelledby="editLogroModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="editLogroModalLabel">Editar</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form #editForm="ngForm">
+                                            <div class="form-group">
+                                                <label for="descripcion">Descripcion</label>
+                                                <input type="text" ngModel="{{actualizarSobre_mi?.descripcion}}"
+                                                    name="descripcion" class="form-control" id="descripcion"
+                                                    placeholder="descripcion" required />
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="update-experiencia-form" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                        <button (click)="actualizarsobre_mi(editForm.value)" type="submit"
+                                            class="btn btn-primary">Actualizar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <!--
+<div class="card mat-card" id="1">
+    <div class="card-titles">
         <h2>Acerca de</h2>
         <div class="btn-edit">
             <a href="#" class="btn-right"> <i class="bi bi-pencil-square" ></i>
             </a>
         </div>
     </div>
-     <!--   <div class="btn-edit2" onclick="editar_acercade()"><a href="#" class="btn-rigth"><i class="fa fa-pen"></i></a></class></div> 
-    </div> -->
     <div>
         <p id="text-acercade">Tecnico superior en hidrocarburos graduado de IFES</p>
+    </div>
+-->
     </div>
 </div>

@@ -19,13 +19,13 @@ export class EducacionService {
 public obtenerunaeducacion(Id: number): Observable<Educacion> {
   return this.http.get<Educacion>(`${this.apiBaseUrl}/buscar/educacion/${Id}`); 
 }
-public altaeducacion(experiencia: Educacion): Observable<Educacion> {
-  console.log(experiencia)  
-  return this.http.post<Educacion>(`${this.apiBaseUrl}/nuevo/educacion`, experiencia);
+public altaeducacion(educacion: Educacion): Observable<Educacion> {
+  console.log(educacion)  
+  return this.http.post<Educacion>(`${this.apiBaseUrl}/nuevo/educacion`, educacion);
   } 
 
-  public actualizareducacion(experiencia: Educacion):Observable <any> {
-    return this.http.put(`${this.apiBaseUrl}/modificar/educacion`, experiencia);
+  public actualizareducacion(educacion: Educacion):Observable <any> {
+    return this.http.put(`${this.apiBaseUrl}/modificar/educacion`, educacion);
   }
 
   public eliminareducacion(Id: number):Observable <void>{
