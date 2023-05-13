@@ -22,8 +22,7 @@ export class EducacionComponent implements OnInit {
     this.datosPorfolio.obtenerdatoseducacion().subscribe(data => {
       this.Educaciones = data;
     });
-  this.usuarioLogueado = this.loginUser.estadoinicio()
-    console.log("esta iniciado en el componente educacion?" + this.loginUser.estadoinicio());
+  this.usuarioLogueado = this.loginUser.estadoinicio();
   }
 
   public obtenereducacion(): void {

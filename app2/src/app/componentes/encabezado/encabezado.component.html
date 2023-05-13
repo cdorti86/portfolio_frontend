@@ -1,18 +1,10 @@
 <div class="card mat-card" id="first-card">
     <div id="barra">
-        <img src="http://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1676134779/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%2817%29.png" alt="argpprod">
+<!--        <img src="http://argentinaprograma.inti.gob.ar/pluginfile.php/1/theme_moove/logo/1676134779/Dise%C3%B1o%20sin%20t%C3%ADtulo%20%2817%29.png" alt="argpprod"> -->
+        <img src="../assets/Img/Argentina.png" alt="argpprod">
         </div>
     <div id="profile-brackground"><img src="https://img.freepik.com/vector-gratis/banner-negro-formas-geometricas-amarillas_1017-32327.jpg?w=996&t=st=1672527704~exp=1672528304~hmac=2dff758972837b775762ade9e40756b86bb68f3a620c372f6ea1a70fac0f6143"></div>
     <div id="info" style="padding: 16px">
-<li *ngFor="let persona of Personas">
-      <div class="btn-group" role="group" aria-label="Basic example">
-        <p><a *ngIf="usuarioLogueado" (click)="onOpenModal('edit', persona)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editPersonaModal" data-bs-toggle="modal">
-        <i class="bi bi-pencil"></i></a>
-<!--        <span><a *ngIf="usuarioLogueado" (click)="onOpenModal('delete', persona)" class="btn btn-secondary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Delete" data-bs-target="#deletePersonaModal" data-bs-toggle="modal">
-        <i class="bi bi-trash"></i></a> </span> </p>
--->
-      </div>
-</li>
 <!--
         <div>
             <button *ngIf="usuarioLogueado" (click)="onOpenModal('add')"  type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addPersonaModal" data-bs-whatever="@getbootstrap">Añadir</button>
@@ -138,6 +130,15 @@
         </div>
     </li>
   </ul>
+  <li *ngFor="let persona of Personas">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <p><a *ngIf="usuarioLogueado" (click)="onOpenModal('edit', persona)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editPersonaModal" data-bs-toggle="modal">
+      <i class="bi bi-pencil"></i></a>
+<!--        <span><a *ngIf="usuarioLogueado" (click)="onOpenModal('delete', persona)" class="btn btn-secondary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Delete" data-bs-target="#deletePersonaModal" data-bs-toggle="modal">
+      <i class="bi bi-trash"></i></a> </span> </p>
+-->
+    </div>
+</li>
 </section>
 </div>
 <!--

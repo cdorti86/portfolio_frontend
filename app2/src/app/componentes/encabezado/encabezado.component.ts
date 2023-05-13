@@ -23,8 +23,7 @@ export class EncabezadoComponent implements OnInit {
     this.datosPorfolio.obtenerdatospersona().subscribe(data => {
       this.Personas = data;
     });
-  this.usuarioLogueado = this.loginUser.estadoinicio()
-    console.log("esta iniciado en el componente encabezado?" + this.loginUser.estadoinicio());
+  this.usuarioLogueado = this.loginUser.estadoinicio();
   }
 
   public obtenerpersona(): void {

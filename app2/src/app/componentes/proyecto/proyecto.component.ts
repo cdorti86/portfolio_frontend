@@ -22,8 +22,7 @@ export class ProyectoComponent implements OnInit {
     this.datosPorfolio.obtenerdatosproyecto().subscribe(data => {
       this.Proyectos = data;
     });
-  this.usuarioLogueado = this.loginUser.estadoinicio()
-    console.log("esta iniciado en el componente proyecto?" + this.loginUser.estadoinicio());
+  this.usuarioLogueado = this.loginUser.estadoinicio();
   }
 
   public obtenerproyecto(): void {

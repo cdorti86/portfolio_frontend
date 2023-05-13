@@ -20,7 +20,6 @@ public obtenerunasobre_mi(Id: number): Observable<Sobre_mi> {
   return this.http.get<Sobre_mi>(`${this.apiBaseUrl}/buscar/sobre_mi/${Id}`); 
 }
 public altasobre_mi(experiencia: Sobre_mi): Observable<Sobre_mi> {
-  console.log(experiencia)  
   return this.http.post<Sobre_mi>(`${this.apiBaseUrl}/nuevo/sobre_mi`, experiencia);
   } 
 

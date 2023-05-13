@@ -20,7 +20,6 @@ public obtenerunaaptitud(Id: number): Observable<Aptitud> {
   return this.http.get<Aptitud>(`${this.apiBaseUrl}/buscar/aptitud/${Id}`); 
 }
 public altaaptitud(experiencia: Aptitud): Observable<Aptitud> {
-  console.log(experiencia)  
   return this.http.post<Aptitud>(`${this.apiBaseUrl}/nuevo/aptitud`, experiencia);
   } 
 

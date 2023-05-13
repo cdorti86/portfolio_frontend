@@ -23,8 +23,7 @@ export class ExperienciaComponent implements OnInit {
     this.datosPorfolio.obtenerdatosexperiencia().subscribe(data => {
       this.Experiencias = data;
     });
-  this.usuarioLogueado = this.loginUser.estadoinicio()
-    console.log("esta iniciado en el componente experiencia?" + this.loginUser.estadoinicio());
+  this.usuarioLogueado = this.loginUser.estadoinicio();
   }
 
   public obtenerexperiencia(): void {
