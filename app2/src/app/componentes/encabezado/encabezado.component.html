@@ -4,7 +4,145 @@
         </div>
     <div id="profile-brackground"><img src="https://img.freepik.com/vector-gratis/banner-negro-formas-geometricas-amarillas_1017-32327.jpg?w=996&t=st=1672527704~exp=1672528304~hmac=2dff758972837b775762ade9e40756b86bb68f3a620c372f6ea1a70fac0f6143"></div>
     <div id="info" style="padding: 16px">
-        <li *ngFor="let persona of miPorfolio">
+<li *ngFor="let persona of Personas">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <p><a *ngIf="usuarioLogueado" (click)="onOpenModal('edit', persona)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editPersonaModal" data-bs-toggle="modal">
+        <i class="bi bi-pencil"></i></a>
+<!--        <span><a *ngIf="usuarioLogueado" (click)="onOpenModal('delete', persona)" class="btn btn-secondary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Delete" data-bs-target="#deletePersonaModal" data-bs-toggle="modal">
+        <i class="bi bi-trash"></i></a> </span> </p>
+-->
+      </div>
+</li>
+<!--
+        <div>
+            <button *ngIf="usuarioLogueado" (click)="onOpenModal('add')"  type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addPersonaModal" data-bs-whatever="@getbootstrap">Añadir</button>
+          </div>
+    </div>
+-->
+
+  <!-- Modal añadir -->
+<!--  <div class="modal fade" id="addPersonaModal" tabindex="-1" aria-labelledby="addPersonaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="addPersonaModalLabel">Añadir Persona</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form #addForm="ngForm" (ngSubmit)="altapersona(addForm)">
+            <div class="form-group">
+                  <label for="nombre">Nombre:</label>
+                  <input type="text" ngModel name="nombre" class="form-control" id="nombre" placeholder="nombre" required/>
+                </div>
+                <div class="form-group">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" ngModel name="apellido" class="form-control" id="apellido" placeholder="apellido" required/>
+                  </div>
+                  <div class="form-group">
+                    <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+                    <input type="date" ngModel name="fecha_nacimiento" class="form-control" id="fecha_nacimiento" placeholder="fecha_nacimiento" required/>
+                  </div>                   
+                <div class="form-group">
+                  <label for="correo">Correo electronico:</label>
+                  <input type="text" ngModel name="correo" class="form-control" id="correo" placeholder="correo" required/>
+                </div>
+                <div class="form-group">
+                  <label for="url_foto">Url de foto:</label>
+                  <input type="text" ngModel name="url_foto" class="form-control" id="url_foto" placeholder="url_foto">
+                </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="add-persona-form" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" (click)="altapersona(addForm)">Enviar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+<section>
+  <ul class="items-list">
+    <li *ngFor="let persona of Personas">
+      <div class="data-container">
+
+        <div class="list-info"></div>
+        <div id="info-img">
+        <img class="profile-image" src="{{persona.url_foto}}" alt="Foto Personal">            
+        </div>
+        <div id="info-data">
+            <div id="info-contact">
+            <h1>{{persona.nombre}} {{persona.apellido}}</h1>
+        </div>
+        <div>
+            <h2>Fecha de nacimiento:</h2>{{persona.fecha_nacimiento}} <h2>Email: <a href="{{persona.correo}}">{{persona.correo}}</a></h2>
+        </div>
+      </div>
+  <!-- Modal eliminar -->
+      <div tabindex="-1" data-bs-toggle="modal" data-bs-target="#deletePersonaModal" class="modal fade" id="deletePersonaModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="deletePersonaModalLabel">Eliminar persona</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+           <div class="modal-body">
+              Estas seguro que quieres eliminar la persona {{eliminarPersona?.nombre}} {{eliminarPersona?.apellido}}?
+          </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+              <button (click)="eliminarpersona(eliminarPersona?.id)" type="button" class="btn btn-danger">Si</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+  <!-- Modal editar -->
+  <div class="modal fade" id="editPersonaModal" tabindex="-1" aria-labelledby="editPersonaModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="editExperienciaModalLabel">Editar persona</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form #editForm="ngForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" ngModel="{{actualizarPersona?.nombre}}" name="nombre" class="form-control" id="nombre" placeholder="nombre" required/>
+              </div>
+              <input type="hidden" ngModel="{{actualizarPersona?.id}}" name="id" class="form-control" id="id" placeholder=""/>
+              <div class="form-group">
+                  <label for="apellido">Apellido:</label>
+                  <input type="text" ngModel="{{actualizarPersona?.apellido}}" name="apellido" class="form-control" id="apellido" placeholder="apellido" required/>
+                </div>
+                <div class="form-group">
+                  <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+               <input type="text" ngModel="{{actualizarPersona?.fecha_nacimiento}}" name="fecha_nacimiento" class="form-control" id="fecha_nacimiento" placeholder="fecha_nacimiento" required/>
+                </div>                    
+              <div class="form-group">
+                <label for="correo">Correo electronico:</label>
+                <input type="text" ngModel="{{actualizarPersona?.correo}}" name="correo" class="form-control" id="correo" placeholder="correo" required/>
+              </div>
+              <div class="form-group">
+                <label for="url_foto">Url de foto:</label>
+                <input type="text" ngModel="{{actualizarPersona?.url_foto}}" name="url_foto" class="form-control" id="url_foto" placeholder="url_foto">
+              </div>
+        </form>                
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="update-persona-form" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button (click)="actualizarpersona(editForm.value)" type="submit" class="btn btn-primary">Actualizar</button>
+            </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </li>
+  </ul>
+</section>
+</div>
+<!--
+<div>
+        <li *ngFor="let persona of Personas">
         <div id="info-img">
                 <img class="profile-image" src="{{persona.url_foto}}" alt="Foto Personal">            
         </div>
@@ -15,7 +153,7 @@
             <div>
             <h2>Fecha de nacimiento:</h2>{{persona.fecha_nacimiento}} <h2>Email: <a href="{{persona.correo}}">{{persona.correo}}</a></h2>
         </div>
-            <!--                <div id="info-company">{{persona.apellido}}</div>
+                <div id="info-company">{{persona.apellido}}</div>
                 <div id="info-contact">
                     <span>{{persona.apellido}}</span>
                     <span><a href="#">Información de contacto</a></span> 
@@ -33,9 +171,7 @@
                     <h2>{{persona.nombre}}</h2>
             </li>
         </ul>
-
-        </div>
+        </div> 
     </li>
--->
     </div>
-</div>
+-->
