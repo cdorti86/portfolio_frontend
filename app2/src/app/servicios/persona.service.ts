@@ -20,7 +20,6 @@ public obtenerunapersona(Id: number): Observable<Persona> {
   return this.http.get<Persona>(`${this.apiBaseUrl}/buscar/persona/${Id}`); 
 }
 public altapersona(persona: Persona): Observable<Persona> {
-  console.log(persona)  
   return this.http.post<Persona>(`${this.apiBaseUrl}/nuevo/persona`, persona);
   } 
 

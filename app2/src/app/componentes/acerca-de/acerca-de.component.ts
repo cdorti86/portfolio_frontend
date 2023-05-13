@@ -22,8 +22,7 @@ export class AcercaDeComponent implements OnInit {
     this.datosPorfolio.obtenerdatossobre_mi().subscribe(data => {
       this.Sobre_mis = data;
     });
-  this.usuarioLogueado = this.loginUser.estadoinicio()
-    console.log("esta iniciado en el componente acerca de?" + this.loginUser.estadoinicio());
+  this.usuarioLogueado = this.loginUser.estadoinicio();
   }
 
   public obtenersobre_mi(): void {

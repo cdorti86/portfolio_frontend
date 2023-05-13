@@ -19,8 +19,7 @@ export class EducacionService {
 public obtenerunaeducacion(Id: number): Observable<Educacion> {
   return this.http.get<Educacion>(`${this.apiBaseUrl}/buscar/educacion/${Id}`); 
 }
-public altaeducacion(educacion: Educacion): Observable<Educacion> {
-  console.log(educacion)  
+public altaeducacion(educacion: Educacion): Observable<Educacion> { 
   return this.http.post<Educacion>(`${this.apiBaseUrl}/nuevo/educacion`, educacion);
   } 
 

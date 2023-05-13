@@ -19,8 +19,7 @@ export class ProyectoService {
 public obtenerunaproyecto(Id: number): Observable<Proyecto> {
   return this.http.get<Proyecto>(`${this.apiBaseUrl}/buscar/proyecto/${Id}`); 
 }
-public altaproyecto(proyecto: Proyecto): Observable<Proyecto> {
-  console.log(proyecto)  
+public altaproyecto(proyecto: Proyecto): Observable<Proyecto> { 
   return this.http.post<Proyecto>(`${this.apiBaseUrl}/nuevo/proyecto`, proyecto);
   } 
 

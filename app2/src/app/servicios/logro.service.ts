@@ -19,8 +19,7 @@ export class LogroService {
 public obtenerunlogro(Id: number): Observable<Logro> {
   return this.http.get<Logro>(`${this.apiBaseUrl}/buscar/logro/${Id}`); 
 }
-public altalogro(logro: Logro): Observable<Logro> {
-  console.log(logro)  
+public altalogro(logro: Logro): Observable<Logro> { 
   return this.http.post<Logro>(`${this.apiBaseUrl}/nuevo/logro`, logro);
   } 
 

@@ -22,8 +22,7 @@ export class LogrosComponent implements OnInit {
     this.datosPorfolio.obtenerdatoslogro().subscribe(data => {
       this.Logros = data;
     });
-  this.usuarioLogueado = this.loginUser.estadoinicio()
-    console.log("esta iniciado en el componente logro?" + this.loginUser.estadoinicio());
+  this.usuarioLogueado = this.loginUser.estadoinicio();
   }
 
   public obtenerlogro(): void {
