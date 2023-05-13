@@ -23,7 +23,6 @@ export class AptitudesComponent implements OnInit {
  
    ngOnInit() : void {
  this.datosPorfolio.obtenerdatosaptitud().subscribe(data => {
-   console.log(data);
    this.aptitudes=data ;
   });
   this.usuarioLogueado = this.loginUser.estadoinicio()
