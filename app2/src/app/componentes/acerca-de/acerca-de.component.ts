@@ -57,7 +57,7 @@ export class AcercaDeComponent implements OnInit {
     button.click();
   }
 
-  public altaexperiencia(addForm: NgForm) {
+  public altasobre_mi(addForm: NgForm) {
     document.getElementById('add-sobre_mi-form')?.click();
     this.datosPorfolio.altasobre_mi(addForm.value).subscribe({
       next: (response: Sobre_mi) => {
