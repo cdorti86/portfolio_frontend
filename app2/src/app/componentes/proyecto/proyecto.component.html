@@ -45,7 +45,7 @@
           </div>
         </div>
       </div>
-  
+    <!-- Vista en pagina -->
     <section>
       <ul class="items-list">
         <li *ngFor="let proyecto of Proyectos">
@@ -58,13 +58,13 @@
             </div>
             <div class="list-info"></div>
             <div id="info-img">
-                <img class="profile-image" src="{{proyecto.url_proyecto}}" alt="Foto Proyecto">
+                <img class="profile-image" src="{{proyecto.imagen_proyecto}}" alt="Foto Proyecto">
             </div>
             <div>
               <h3>Nombre del Proyecto: {{proyecto.nombre}}</h3>
               <p>Descripcion: {{proyecto.descripcion}} </p>
               <h4>Fecha de Inicio: {{proyecto.fecha_realizacion}}</h4>
-              <h4>Direccion: <a href="{{proyecto.url_proyecto}}"></a>{{proyecto.url_proyecto}}</h4>
+              <h4>Direccion: <a href="{{proyecto.url_proyecto}}">{{proyecto.url_proyecto}}</a></h4>
             </div>
           </div>
       <!-- Modal eliminar -->
