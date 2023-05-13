@@ -6,11 +6,9 @@
     <div id="info" style="padding: 16px">
         <li *ngFor="let persona of miPorfolio">
         <div id="info-img">
-                <img class="profile-image" src="{{persona.url_foto}}" alt="Foto Personal">
-                <div class="btn-edit"><a href="#" class="btn-right"><i class="bi bi-pencil-square"></i></a></div>
-            
+                <img class="profile-image" src="{{persona.url_foto}}" alt="Foto Personal">            
         </div>
-        <div id="info-data">
+<!--        <div id="info-data">
             <div>
                 <h1>{{persona.nombre}} {{persona.apellido}}</h1>
                 <div id="info-company">{{persona.apellido}}</div>
@@ -19,7 +17,7 @@
                     <span><a href="#">Información de contacto</a></span> 
                 </div>
             </div>
-        <ul id="info-details">
+       <ul id="info-details">
             <li>
                 <a href="#">
                     <img src={{persona.url_foto}} alt={{persona.nombre}}>
@@ -27,15 +25,16 @@
                 </a>
             </li>
             <li>
-                <a href="#">
                     <img src={{persona.url_foto}} alt={{persona.nombre}}>
                     <h2>{{persona.nombre}}</h2>
-                </a>
             </li>
         </ul>
+
         </div>
     </li>
-    </div> 
-    <div>        <li *ngFor="let persona of miPorfolio">
+-->
+    </div>
+
+    <div><li *ngFor="let persona of miPorfolio">
         <h2>Fecha de nacimiento:</h2>{{persona.fecha_nacimiento}} <h2>e-mail:{{persona.correo}}</h2></div>
 </div>
