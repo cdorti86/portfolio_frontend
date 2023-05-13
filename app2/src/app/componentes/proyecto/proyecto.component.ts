@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PorfolioService } from 'src/app/servicios/porfolio.service';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import { HttpErrorResponse} from '@angular/common/http';
 import { Proyecto } from 'src/app/Model/proyecto';
 import { ProyectoService } from 'src/app/servicios/proyecto.service';
 import { AuthService } from 'src/app/servicios/auth.service';

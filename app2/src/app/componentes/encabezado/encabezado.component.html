@@ -8,10 +8,14 @@
         <div id="info-img">
                 <img class="profile-image" src="{{persona.url_foto}}" alt="Foto Personal">            
         </div>
-<!--        <div id="info-data">
-            <div>
+        <div id="info-data">
+            <div id="info-contact">
                 <h1>{{persona.nombre}} {{persona.apellido}}</h1>
-                <div id="info-company">{{persona.apellido}}</div>
+            </div>
+            <div>
+            <h2>Fecha de nacimiento:</h2>{{persona.fecha_nacimiento}} <h2>Email: <a href="{{persona.correo}}">{{persona.correo}}</a></h2>
+        </div>
+            <!--                <div id="info-company">{{persona.apellido}}</div>
                 <div id="info-contact">
                     <span>{{persona.apellido}}</span>
                     <span><a href="#">Información de contacto</a></span> 
@@ -34,7 +38,4 @@
     </li>
 -->
     </div>
-
-    <div><li *ngFor="let persona of miPorfolio">
-        <h2>Fecha de nacimiento:</h2>{{persona.fecha_nacimiento}} <h2>e-mail:{{persona.correo}}</h2></div>
 </div>
