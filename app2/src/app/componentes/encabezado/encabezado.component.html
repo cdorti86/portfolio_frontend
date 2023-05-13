@@ -4,13 +4,24 @@
         </div>
     <div id="profile-brackground"><img src="https://img.freepik.com/vector-gratis/banner-negro-formas-geometricas-amarillas_1017-32327.jpg?w=996&t=st=1672527704~exp=1672528304~hmac=2dff758972837b775762ade9e40756b86bb68f3a620c372f6ea1a70fac0f6143"></div>
     <div id="info" style="padding: 16px">
-
+<li *ngFor="let persona of Personas">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <p><a *ngIf="usuarioLogueado" (click)="onOpenModal('edit', persona)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editPersonaModal" data-bs-toggle="modal">
+        <i class="bi bi-pencil"></i></a>
+<!--        <span><a *ngIf="usuarioLogueado" (click)="onOpenModal('delete', persona)" class="btn btn-secondary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Delete" data-bs-target="#deletePersonaModal" data-bs-toggle="modal">
+        <i class="bi bi-trash"></i></a> </span> </p>
+-->
+      </div>
+</li>
+<!--
         <div>
-            <button *ngIf="usuarioLogueado" (click)="onOpenModal('add')"  type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addExperienciaModal" data-bs-whatever="@getbootstrap">Añadir</button>
+            <button *ngIf="usuarioLogueado" (click)="onOpenModal('add')"  type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#addPersonaModal" data-bs-whatever="@getbootstrap">Añadir</button>
           </div>
     </div>
+-->
+
   <!-- Modal añadir -->
-  <div class="modal fade" id="addPersonaModal" tabindex="-1" aria-labelledby="addPersonaModalLabel" aria-hidden="true">
+<!--  <div class="modal fade" id="addPersonaModal" tabindex="-1" aria-labelledby="addPersonaModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -48,25 +59,13 @@
       </div>
     </div>
   </div>
-
+-->
 <section>
   <ul class="items-list">
     <li *ngFor="let persona of Personas">
       <div class="data-container">
-        <div class="btn-group" role="group" aria-label="Basic example">
-          <p><a *ngIf="usuarioLogueado" (click)="onOpenModal('edit', persona)" class="btn btn-primary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Edit" data-bs-target="#editPersonaModal" data-bs-toggle="modal">
-          <i class="bi bi-pencil"></i></a>
-          <span><a *ngIf="usuarioLogueado" (click)="onOpenModal('delete', persona)" class="btn btn-secondary tooltips" data-placement="top" data-toogle="tooltip" data-original-title="Delete" data-bs-target="#deletePersonaModal" data-bs-toggle="modal">
-          <i class="bi bi-trash"></i></a> </span> </p>
-        </div>
+
         <div class="list-info"></div>
- <!--       <div>
-          <h3>Descripción de las tareas: {{experiencia.descripcion}}</h3>
-          <p>Nombre de la Empresa: {{experiencia.nombreEmpresa}} - ¿Actualmente esta trabajando?: <span>{{experiencia.esTrabajoActual}}</span> </p>
-          <h4>Fecha de Inicio: {{experiencia.fecha_de_Inicio}} - Hasta: {{experiencia.fecha_de_Finalizacion}}</h4>
-          <h4>Tipo de empleo: {{experiencia.tipo_de_empleo}}</h4>
-        </div>
--->
         <div id="info-img">
         <img class="profile-image" src="{{persona.url_foto}}" alt="Foto Personal">            
         </div>
